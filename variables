@@ -1,0 +1,10 @@
+MAILHOST mailserver
+MAILDOMAIN our.domain
+MAILROOT root
+MAILUSER mailuser
+MAILIP 172.28.45.212
+EXTDOMAIN external.domain
+EXTHOST exthost
+EXTUSER extuser
+EXTIP 192.168.52.152
+
