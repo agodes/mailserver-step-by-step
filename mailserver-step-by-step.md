@@ -1095,6 +1095,23 @@ __*The restrictions must be indented, currently this can't be displayed here; ad
 >`MAILROOT@MAILHOST# postfix reload`
 
 
+##Some more useful settings
+
+There are some more settings which are not really required, but are useful. Here they are:
+
+###Postfix
+
+To support some mail clients which have a non standard conform behaviour with SASL, add the parameter
+
+*/etc/postfix/main.cf*
+>broken_sasl_auth_clients = yes
+
+It doesn't have any drawbacks, but supports those broken mail clients.
+
+###Dovecot
+
+No further settings so far.
+
 ##All files incorporated
 
 ### */etc/postfix/main.cf*
@@ -1110,6 +1127,7 @@ virtual_transport = lmtp:unix:private/dovecot-lmtp
 smtpd_sasl_auth_enable = yes
 smtpd_sasl_type = dovecot
 smtpd_sasl_path = private/auth
+broken_sasl_auth_clients = yes
 
 smtpd_tls_security_level = may
 smtpd_tls_cert_file = /etc/dovecot/dovecot.pem
